@@ -1,0 +1,473 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b1020"><meta name="description" content="FluentMe AI — personal English speaking, grammar and vocabulary coach with progress tracking."><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml"><style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+:root{color-scheme:dark;--bg:#0b1020;--panel:#151b2c;--card:#1b2237;--line:#313a53;--ink:#f4f6ff;--muted:#a0abc3;--mint:#b4f28e;--lime:#a3ffb8;--violet:#a998ff;--sky:#8adcfb;--peach:#ffccaa;--red:#ffb3b3}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 70% -18%,#302859 0,transparent 42%),radial-gradient(ellipse at 8% 11%,#123951 0,transparent 33%),var(--bg);color:var(--ink);font:15px/1.45 'DM Sans',system-ui,-apple-system,sans-serif;min-height:100vh}button,input,select,textarea{font:inherit}button{cursor:pointer;transition:transform .15s,background .15s}button:active{transform:scale(.98)}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--mint);outline-offset:2px}main{width:min(1040px,100%);margin:auto;padding:25px 20px 110px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}.brand{display:flex;gap:12px;align-items:center;font:800 23px 'Outfit',sans-serif;letter-spacing:-.8px}.brandIcon{width:41px;height:41px;display:grid;place-items:center;background:linear-gradient(135deg,#b2f995,#75c7f7);color:#0b1a20;border-radius:13px;font-size:25px;box-shadow:0 8px 28px #8ff0e22b}.brand b{color:var(--mint)}.smallmuted,.sub{font-size:12px;color:var(--muted)}.chip{border:1px solid var(--line);color:#d9def2;background:#222b42;border-radius:99px;padding:7px 12px;font-size:12px;font-weight:700}.chip.active{background:#b4f28e;color:#193324;border-color:#b4f28e}.badge{display:inline-flex;align-items:center;gap:6px;border:1px solid #4f7858;background:#25412c;color:#baf8c8;border-radius:99px;padding:6px 11px;font-size:11px;font-weight:800}.badge.offline{background:#333044;border-color:#605c73;color:#d6d0e0}.view{display:none;animation:rise .25s ease}.view.active{display:block}@keyframes rise{from{opacity:.3;transform:translateY(8px)}to{opacity:1;transform:none}}.hero{background:radial-gradient(circle at 83% 24%,#6657b1 0,#3a387a 27%,transparent 42%),linear-gradient(120deg,#2d4583,#333464 62%,#3f3d77);min-height:235px;border-radius:26px;padding:28px;position:relative;overflow:hidden;display:flex;align-items:center;box-shadow:0 22px 55px #0003}.hero:before{content:'';position:absolute;right:-40px;top:-84px;width:280px;height:280px;border:1px solid #ffffff42;border-radius:50%;box-shadow:0 0 0 35px #ffffff09,0 0 0 75px #ffffff08}.hero:after{content:'✧';position:absolute;right:14%;bottom:7%;font-size:80px;color:#e7ffbb99}.hero .content{position:relative;z-index:1;max-width:580px}.eyebrow{font-size:11px;font-weight:800;color:#d7ffc7;letter-spacing:2px;text-transform:uppercase}.hero h1{font:800 clamp(30px,4vw,42px)/1.12 'Outfit',sans-serif;letter-spacing:-1px;margin:9px 0 13px}.hero p{max-width:470px;color:#ecedff;line-height:1.6;margin:0}.heroBtns{display:flex;gap:9px;margin-top:20px;flex-wrap:wrap}.btn{border:0;border-radius:13px;background:var(--mint);color:#172523;padding:12px 16px;font-weight:800;display:inline-flex;gap:8px;align-items:center;justify-content:center;text-decoration:none;min-height:43px}.btn.light{background:#ffffffed;color:#1b2345}.btn.secondary{background:#2c3550;color:#f5f7ff}.btn.outline{border:1px solid #606e8b;background:transparent;color:#edf2ff}.btn.warn{background:#55333d;color:#ffe1e5}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.full{width:100%}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}.stat,.card{background:linear-gradient(145deg,#1a2236,#151b2d);border:1px solid var(--line);border-radius:20px;padding:18px}.stat span{font-size:11px;color:#a9b4cd}.stat strong{display:block;font:800 26px 'Outfit',sans-serif;margin:5px 0 0;letter-spacing:-.7px}.stat .sticon{font-size:18px}.sectiontop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 12px}.sectiontop h2,.heading{font:700 22px 'Outfit',sans-serif;margin:0;letter-spacing:-.4px}.muted{color:var(--muted);font-size:13px}.stack{display:grid;gap:12px}.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:13px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.task{display:flex;align-items:center;gap:12px;background:#222a40;border-radius:14px;padding:13px;margin-top:10px}.task .emoji{height:42px;width:42px;border-radius:12px;background:#303957;display:grid;place-items:center;font-size:21px}.task .txt{flex:1;min-width:0}.task strong{display:block;font-size:14px}.task small{color:var(--muted);font-size:12px}.task .minutes{color:#d8cfff;font-size:12px;font-weight:800}.rail{height:10px;background:#2d344b;border-radius:20px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,#8bddc8,#aef28f);border-radius:20px;transition:width .25s}.note{font-size:12px;color:#aab7d5;line-height:1.65}.hstack{display:flex;align-items:center;justify-content:space-between;gap:12px}.tag{color:var(--mint);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}.prompt{font:650 21px/1.35 'Outfit',sans-serif;margin:14px 0 10px}.explain{background:#223b3a;border:1px solid #3c6b62;color:#d7f5e9;border-radius:13px;padding:12px;white-space:pre-wrap;font-size:13px;line-height:1.65}.warning{background:#3a322a;border:1px solid #766044;color:#f7dbb9;border-radius:12px;padding:12px;font-size:12px;line-height:1.55}.error{background:#4b2e38;border:1px solid #8e5463;color:#ffdae0;border-radius:12px;padding:12px;font-size:12px}button.tab{background:transparent;border:none;color:#adb8d0;border-radius:12px;padding:9px 12px}button.tab.selected{background:#303c59;color:#f5faff}.tabs{display:flex;gap:4px;background:#1e273d;padding:5px;border-radius:15px;flex-wrap:wrap;margin:14px 0}.topics{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.chatbox{height:330px;overflow-y:auto;background:#10172a;border:1px solid #2f3954;border-radius:15px;display:flex;gap:10px;flex-direction:column;padding:15px;margin:12px 0;scroll-behavior:smooth}.bubble{padding:11px 14px;max-width:89%;border-radius:16px 16px 16px 4px;background:#2a3551;white-space:pre-wrap;font-size:13px;line-height:1.6;word-break:break-word}.bubble.me{align-self:flex-end;border-radius:16px 16px 4px 16px;background:#35606a;color:#f3ffff}.bubble small{display:block;color:#c7d0e5;margin-top:5px;font-size:10px}.chatrow{display:grid;grid-template-columns:1fr auto auto;gap:8px}.input,select,textarea{width:100%;border:1px solid #3d4864;background:#10182b;color:#f5f8ff;padding:12px 13px;border-radius:13px;min-width:0}textarea{min-height:100px;resize:vertical}.label{display:block;font-size:12px;font-weight:700;color:#bac6df;margin:13px 0 7px}.qoption{width:100%;border:1px solid #46506b;border-radius:12px;background:#29334b;text-align:left;padding:13px 15px;color:#f4f5ff;margin-bottom:9px}.qoption:disabled{opacity:.75}.qoption.good{border-color:#9be4b9;background:#23534b}.qoption.bad{border-color:#eeb1a7;background:#623f4b}.wordbig{font:750 36px 'Outfit',sans-serif;margin:11px 0 0}.wordmeaning{color:var(--peach);font-weight:700}.rowButtons{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.pillbar{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.progressDots{display:flex;gap:7px;margin:13px 0}.progressDots i{width:11px;height:11px;background:#3b465f;border-radius:50%;display:block}.progressDots i.done{background:var(--mint)}.dateGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:12px}.daycell{border:1px solid #343f59;background:#202a42;border-radius:10px;text-align:center;padding:9px 0;color:#d4daec;font-size:12px}.daycell.active{background:#326155;border-color:#6de5ae}.daycell.today{box-shadow:inset 0 0 0 2px var(--violet)}.chart{height:120px;display:flex;align-items:end;gap:11px;margin:18px 0 0}.chartcol{flex:1;min-width:0;display:flex;align-items:center;flex-direction:column;justify-content:end;height:100%}.chartbar{background:linear-gradient(#b2f38d,#65bcd4);border-radius:6px 6px 3px 3px;width:min(30px,100%);min-height:3px}.chartcol small{font-size:10px;color:#a5aec5;margin-top:7px}.coachstatus{display:flex;justify-content:space-between;align-items:center;gap:8px}.modal{position:fixed;inset:0;background:#000b;z-index:40;display:none;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.modalCard{width:min(520px,100%);background:#1b243a;border:1px solid #62708b;border-radius:21px;padding:23px;max-height:90vh;overflow:auto}.toast{position:fixed;bottom:90px;right:16px;left:16px;max-width:420px;margin:auto;background:#e9ffd9;color:#173523;border-radius:12px;padding:12px 16px;z-index:55;font-weight:700;box-shadow:0 9px 29px #0005;display:none}.nav{position:fixed;bottom:0;left:0;right:0;max-width:1040px;margin:auto;background:#121a2ff7;backdrop-filter:blur(18px);border:1px solid #36405b;border-bottom:0;border-radius:22px 22px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:10px 8px calc(8px + env(safe-area-inset-bottom));z-index:20}.nav button{border:0;background:none;color:#9da9c2;display:flex;align-items:center;justify-content:center;gap:5px;flex-direction:column;font-size:10px;padding:4px 0}.nav button span{font-size:21px}.nav button.active{color:var(--mint)}.footer{padding:23px 0 0;color:#7485a7;font-size:11px;text-align:center}.tiny{font-size:11px}.hline{height:1px;background:var(--line);margin:15px 0}.hide{display:none!important}#focusClock{font:800 52px 'Outfit',sans-serif;letter-spacing:-1px;margin:2px 0 5px;text-align:center}.toggleRow{display:flex;align-items:center;gap:10px}.toggleRow input{width:auto}.empty{text-align:center;padding:40px 10px;color:#99a5bd}@media(max-width:620px){main{padding:17px 13px 115px}.brand{font-size:20px}.top .chip{font-size:10px}.hero{padding:22px;min-height:224px}.hero:after{right:2%;font-size:55px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2,.grid3{grid-template-columns:1fr}.sectiontop h2{font-size:20px}.card{padding:15px}.chatbox{height:320px}.btn{padding:11px 12px;font-size:13px}.brandIcon{height:37px;width:37px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.reminderToggle{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--text,#e8eeff);cursor:pointer}.reminderToggle input{accent-color:#b6f18c;width:19px;height:19px}.reminderToggle span{line-height:1.4}
+
+/* Gentle, learner-controlled personal encouragement */
+.motivationCard{border-color:#507d6e;background:linear-gradient(147deg,#17383b,#1e2540 84%)}
+.miniMission{border-radius:14px;background:#0c1e30;border:1px solid #385664;padding:12px 14px;margin:14px 0}
+.miniMission p{margin:7px 0 0;line-height:1.6}
+.milestoneList{display:grid;gap:9px;margin:13px 0}.winItem{border:1px solid #32445d;border-radius:11px;padding:9px 11px;color:#c7d0e3;font-size:13px}.winItem.unlocked{background:#24483e;border-color:#4e9573;color:#e3ffee}
+
+/* FluentMe Smart Studio additions */
+.studioHero{background:linear-gradient(125deg,#12253f 0%,#164b48 70%,#245349 100%)}
+.skillCards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
+.skillMetric{border:1px solid rgba(128,157,187,.2);border-radius:14px;padding:12px;background:rgba(93,135,154,.06)}
+.skillMetric strong{display:block;font-size:24px;margin:4px 0}.skillMetric small{color:#a5b0c5;font-size:11px}
+#assessOptions .qoption{margin-top:7px}#assessOptions{margin-top:9px}
+#smart .prompt{white-space:pre-line}.nav{gap:0;grid-template-columns:repeat(6,minmax(0,1fr))}.nav button{min-width:0;padding-left:5px;padding-right:5px}
+@media(min-width:850px){.skillCards{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+
+.voiceDock,.voiceMemory{margin:15px 0;background:linear-gradient(130deg,#22384a,#222e44);border:1px solid #3a6e78;padding:14px;border-radius:17px}.voiceDock .badge{font-size:11px}.voiceDock .btn{flex:1}.voiceDock .note{line-height:1.5}.voiceMemory textarea{min-height:70px;font-size:14px}.voiceMemory .btn{font-size:12px}@media(max-width:620px){.voiceDock,.voiceMemory{padding:12px}.voiceDock .btn{font-size:13px}}
+</style><title>FluentMe AI Live Talk • Your English Journey</title><style id="fluentme-normal-type">
+/* Comfortable, standard-size phone typography. No oversized display text. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-size:15px;line-height:1.55}
+.brand{font-size:20px}
+.hero h1{font-size:clamp(25px,5.8vw,30px);line-height:1.19;letter-spacing:-.45px}
+.hero p{font-size:15px;line-height:1.55}
+.sectiontop h2,.heading{font-size:19px;line-height:1.3}
+.prompt{font-size:19px;line-height:1.4}
+.wordbig{font-size:27px}
+.stat strong{font-size:23px}
+.skillMetric strong{font-size:22px}
+.bubble{font-size:14px;line-height:1.6}
+.bubble small{font-size:11px}
+.input,select,textarea{font-size:16px;line-height:1.45}
+button,.btn,button.tab,.qoption{font-size:14px}
+.muted,.explain,.winItem{font-size:13px}
+#focusClock{font-size:42px}
+#motivationTitle{font-size:19px!important}
+@media(max-width:620px){.hero h1{font-size:27px}.sectiontop h2{font-size:19px}.brand{font-size:19px}.chatbox{height:350px}.btn{font-size:14px}}
+</style></head>
+<body><main><header class="top"><div class="brand"><div class="brandIcon">f.</div><div>fluent<b>me</b><div class="smallmuted" style="font:500 11px 'DM Sans',sans-serif;letter-spacing:0">AI English companion</div></div></div><button class="chip" id="topMode" data-go="settings">🎙 Voice AI</button></header>
+<section class="view active" id="home"><div class="hero"><div class="content"><div class="eyebrow">✦ YOUR PERSONAL ENGLISH JOURNEY</div><h1 id="heroName">Small steps. Big fluency.</h1><p>Speaking, grammar & vocabulary. A flexible 15–60 minute English journey—at your pace.</p><div class="heroBtns"><button class="btn light" data-go="coach">🎙 Start speaking →</button><button class="btn secondary" id="dailyTimerBtn">⏱ Practice timer</button></div></div></div>
+<div class="rowButtons" style="margin-top:13px"><button class="btn secondary" id="smartHomeBtn">🧠 Smart Learning Studio</button><button class="btn outline" id="careerHomeBtn">💼 Career English</button></div><div class="stats"><div class="stat"><div class="sticon">🔥 <span>Streak</span></div><strong id="metricStreak">0</strong><span>days in a row</span></div><div class="stat"><div class="sticon">⏱ <span>Today</span></div><strong id="metricMinutes">0m</strong><span id="todayGoalNote">of 60m target</span></div><div class="stat"><div class="sticon">✦ <span>Practice XP</span></div><strong id="metricXP">0</strong><span>effort points</span></div><div class="stat"><div class="sticon">📖 <span>Vocabulary</span></div><strong id="metricWords">0</strong><span>words studied</span></div></div>
+<div class="sectiontop"><h2>Today's journey</h2><span class="tag" id="todayDate"></span></div><div class="grid2"><div class="card"><div class="hstack"><strong id="planTitle">60-minute flexible plan</strong><span id="todayPercent" class="tag">0 / 4</span></div><div class="rail" style="margin:12px 0 14px"><div id="pathBar" class="fill"></div></div><div id="pathTasks"></div><p class="note"><span id="planCaption">Choose 15–60 minutes. One hour is the maximum, not a daily obligation.</span> Your progress has no expiry.</p></div><div class="stack"><div class="card"><div class="hstack"><strong>Focus practice timer</strong><span class="tag">FLEXIBLE</span></div><div id="focusClock">15:00</div><div class="hstack" style="margin-top:10px"><select id="focusType" aria-label="Study type"><option value="speaking">🎙 Speaking · 15m</option><option value="grammar">✍ Grammar · 8m</option><option value="vocab">📖 Vocabulary · 7m</option><option value="listening">🎧 Listening · 5m</option></select></div><div class="rowButtons"><button class="btn" id="timerStart">▶ Start</button><button class="btn secondary" id="timerReset">↻ Reset</button></div><p class="note" id="timerNotice">Keep this page open during timed practice. Completed time is added to your daily record.</p></div><div class="card motivationCard"><div class="hstack"><span class="tag">✨ YOUR MOTIVATION COACH</span><span class="tag" id="motivationStatus">DAY BY DAY</span></div><div class="prompt" id="motivationTitle" style="font-size:21px">Every sentence is practice.</div><p class="muted" id="motivationMessage">You can learn in small, comfortable steps.</p><div class="miniMission"><strong>🎯 Today's tiny speaking mission</strong><p class="muted" id="miniMissionText">Say three sentences about your day.</p></div><div class="rowButtons"><button class="btn" id="motivateMe">✨ Encourage me</button><button class="btn secondary" id="hearMotivation">🔊 Listen</button><button class="btn outline" id="tryMission">🎙 Try challenge</button></div><p class="note">Kind reminders, not pressure. Rest days are okay.</p></div></div></div></section>
+<section class="view" id="coach"><div class="sectiontop"><h2>🎙 Your Live Talk coach</h2><span id="coachBadge" class="badge offline">AI · connect to start</span></div><p class="muted">Have a natural English conversation. Speak into the microphone and listen to the AI answer, or use text. The teacher remembers earlier messages on this device.</p><div class="card"><div class="hstack" style="flex-wrap:wrap"><strong>🎙 English AI conversation</strong><span class="tag">VOICE + TEXT</span></div><div id="topics" class="topics"></div><div id="aiNotice" class="warning hide">AI is not connected yet. Open Settings and enter your existing Cloudflare Worker URL and coach access code. Never enter an API key here.</div><div class="chatbox" id="chatLog" aria-live="polite"></div><div class="chatrow"><input class="input" id="chatInput" aria-label="Your English message" placeholder="Write or speak in English…" maxlength="500"><button class="btn secondary" id="micBtn" title="Use microphone">🎤</button><button class="btn" id="sendBtn">Send</button></div><div class="voiceDock" aria-label="AI voice conversation tools">
+  <div class="hstack" style="gap:8px;flex-wrap:wrap"><strong>🎙 Voice conversation</strong><span class="badge offline" id="voiceChip">Off</span></div>
+  <p class="note" style="margin:6px 0 10px">Talk → AI replies aloud → talk again. This is a turn-by-turn voice conversation. It is not simultaneous Gemini Live-style streaming.</p>
+  <div class="rowButtons"><button class="btn" id="voiceStart">🎤 Start speaking</button><button class="btn warn" id="voiceStop">■ Stop voice</button></div>
+  <label class="toggleRow" style="margin:10px 0 4px"><input type="checkbox" id="voiceAuto" checked><span class="note">Auto-listen after the teacher finishes (compatible browsers only)</span></label>
+  <p id="voiceStatus" class="note" role="status" aria-live="polite">Ready. Tap Start speaking and start speaking.</p>
+</div>
+<div class="voiceMemory"><label class="label" for="coachMemory">🧠 What should your teacher remember? (optional)</label><textarea id="coachMemory" maxlength="480" rows="2" placeholder="Example: I'm learning for university and interviews. Please use simple English and correct past-tense mistakes."></textarea><div class="rowButtons"><button class="btn secondary" id="saveCoachMemory">Save learning notes</button><button class="btn outline" id="forgetCoachMemory">Clear notes</button></div><p class="note">Saved on this device; included in messages sent to your configured AI Worker. Avoid adding private or sensitive information.</p></div><div class="rowButtons"><button class="btn outline" id="listenCoach">🔊 Hear teacher</button><button class="btn outline" id="newChat">↻ New conversation</button></div><div id="chatFeedback" class="explain hide" style="margin-top:12px"></div><p class="note" id="micStatus">Speech recognition depends on browser support, microphone permission and sometimes internet. It is not detailed pronunciation scoring.</p></div></section>
+<section class="view" id="practice"><div class="sectiontop"><h2>✍ Practice studio</h2><span class="tag">LEARN • TRY • REPEAT</span></div><div class="tabs"><button class="tab selected" data-practice="grammar">Grammar</button><button class="tab" data-practice="vocab">Vocabulary</button><button class="tab" data-practice="pronunciation">Speak & repeat</button></div>
+<div id="grammarPanel" class="card"><div class="hstack"><span id="grammarTopic" class="tag">Grammar</span><span id="grammarIndex" class="muted"></span></div><div class="prompt" id="grammarPrompt"></div><div id="grammarChoices"></div><div class="explain hide" id="grammarFeedback"></div><button class="btn" style="margin-top:16px" id="grammarNext">Next question →</button></div>
+<div id="vocabPanel" class="card hide"><div class="hstack"><span id="wordLabel" class="tag">DAILY WORD</span><button id="wordSpeak" class="btn outline">🔊 Listen</button></div><div id="wordTitle" class="wordbig"></div><div class="muted" id="wordSample"></div><div id="wordMeaning" class="explain hide" style="margin-top:16px"></div><div class="rowButtons"><button id="wordReveal" class="btn secondary">Show Sinhala meaning</button><button id="wordAgain" class="btn outline">Needs practice</button><button id="wordKnow" class="btn">I remember ✓</button></div><p class="note" id="wordDue"></p></div>
+<div id="pronunciationPanel" class="card hide"><span class="tag">LISTEN • REPEAT • COMPARE</span><div id="phraseText" class="prompt"></div><p id="phraseMeaning" class="muted"></p><div class="rowButtons"><button id="phraseListen" class="btn">🔊 Listen</button><button id="phraseMic" class="btn secondary">🎤 Repeat aloud</button><button id="phraseNext" class="btn outline">Next phrase →</button></div><div id="phraseFeedback" class="explain hide" style="margin-top:15px"></div><p class="note">The word-match estimate compares speech-to-text results; it does not measure accent or exact pronunciation.</p></div></section>
+<section class="view" id="journey"><div class="sectiontop"><h2>📈 My learning journey</h2><span class="tag">EVERY DAY COUNTS</span></div><div class="grid2"><div class="card"><div class="hstack"><strong>Last 7 days · minutes</strong><span class="muted" id="weeklyMinutes">0m total</span></div><div id="weeklyChart" class="chart"></div><div class="hline"></div><div class="hstack"><span class="muted">Speaking practices</span><strong id="totalSpeak">0</strong></div><div class="hstack" style="margin-top:10px"><span class="muted">Grammar correct</span><strong id="totalGrammar">0</strong></div><div class="hstack" style="margin-top:10px"><span class="muted">Listening repeats</span><strong id="totalListen">0</strong></div></div><div class="card"><strong>Four-step learning roadmap</strong><div id="roadmap"></div></div></div><div class="sectiontop"><h2>🌱 Celebrate your growth</h2><span class="tag">YOUR LEARNING STORY</span></div><div class="grid2"><div class="card"><span class="tag">YOUR WEEKLY REFLECTION</span><div class="prompt" id="weeklyCoachNote">One practice at a time.</div><p class="muted" id="weeklyGrowthText">Your progress becomes visible as you practise.</p></div><div class="card"><strong>Little wins</strong><div id="milestones" class="milestoneList"></div><p class="note">Your progress is measured by practice, not by comparing yourself to others.</p></div></div><div class="sectiontop"><h2>Daily history</h2><span class="muted">Last 28 days</span></div><div class="card"><div id="historyCalendar" class="dateGrid"></div><div id="historyDetail" class="explain" style="margin-top:14px">Select any date to view progress.</div></div><div class="card" style="margin-top:13px"><strong>My common English corrections</strong><div id="errorHistory" class="stack" style="margin-top:12px"></div></div></section>
+
+<section class="view" id="smart">
+  <div class="sectiontop"><h2>🧠 Smart Learning Studio</h2><span class="tag">YOUR PERSONAL ROADMAP</span></div>
+  <div class="hero studioHero"><div class="content"><div class="eyebrow">✦ TRAIN WITH PURPOSE</div><h1>Every mistake teaches you something.</h1><p>Your level check, mistake memory, career English and next best lesson—together in one place.</p></div></div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><div class="hstack"><strong>🎯 Your next best step</strong><span class="tag">ADAPTIVE</span></div><div class="prompt" id="smartAdvice">Complete a short level check or start speaking.</div><p class="muted" id="smartWhy">Based on your recorded learning activity, not an invented fluency score.</p><button class="btn" id="smartAction">Start recommended lesson →</button></div>
+    <div class="card"><div class="hstack"><strong>📋 Level check</strong><span class="tag" id="assessStatus">NOT TAKEN</span></div><p class="muted">10 short grammar questions to estimate a starting point. Not an official CEFR test.</p><div class="prompt" id="assessQuestion">Ready for a quick placement check?</div><div id="assessOptions" class="stack"></div><p id="assessFeedback" class="note">You can retake this any time.</p><div class="rowButtons"><button class="btn" id="assessStart">Start / retake check</button><button class="btn outline hide" id="assessApply">Use suggested level</button></div></div>
+    <div class="card"><div class="hstack"><strong>📝 My mistake notebook</strong><span class="tag" id="mistakeCount">0 SAVED</span></div><p class="muted">Review a sentence you got wrong. Reveal the correction, then practise saying it again.</p><div class="prompt" id="mistakePrompt">Mistakes you correct during conversations will appear here.</div><div class="explain hide" id="mistakeAnswer"></div><div class="rowButtons"><button class="btn" id="mistakeReveal">Reveal correction</button><button class="btn secondary" id="mistakeReviewed">I reviewed this</button><button class="btn outline" id="mistakeNext">Next mistake →</button></div><p class="note" id="mistakeNote"></p></div>
+    <div class="card"><div class="hstack"><strong>💼 Career English Lab</strong><span class="tag">BUSINESS • FINANCE</span></div><p class="muted">Practise useful English for university, job interviews, accounting and presentations.</p><label class="label" for="careerScene">Choose a real situation</label><select id="careerScene"><option value="interview">Job interview</option><option value="accounting">Explain a financial report</option><option value="meeting">Business meeting</option><option value="presentation">University presentation</option></select><div class="prompt" id="careerPrompt"></div><div class="rowButtons"><button class="btn" id="careerListen">🔊 Listen</button><button class="btn secondary" id="careerVoice">🎤 Say it aloud</button><button class="btn outline" id="careerNext">New scenario →</button></div><p class="note" id="careerFeedback"></p><button class="btn full" id="careerCoach">Practise this with Coach →</button></div>
+  </div>
+  <div class="card" style="margin-top:14px"><div class="hstack"><strong>📈 Measurable skill progress</strong><span class="tag">REAL ACTIVITY ONLY</span></div><div id="skillMetrics" class="skillCards"></div><p class="note">Grammar % only counts answered questions. Word recall reflects your own reviews. Speech-to-text matching is not an accent score.</p></div>
+</section>
+<section class="view" id="settings"><div class="sectiontop"><h2>⚙ My coach settings</h2></div><div class="grid2"><div class="card"><strong>My English profile</strong><label class="label" for="studentName">Name (optional)</label><input id="studentName" class="input" placeholder="Your name"><label class="label" for="level">English level</label><select id="level"><option value="A1">Beginner · A1</option><option value="A2">Elementary · A2</option><option value="B1">Intermediate · B1</option><option value="B2">Upper intermediate · B2</option><option value="C1">Advanced · C1</option></select><label class="label" for="goalMinutes">Daily learning goal</label><select id="goalMinutes"><option value="15">15 minutes</option><option value="30">30 minutes</option><option value="35">35 minutes</option><option value="40">40 minutes</option><option value="45">45 minutes</option><option value="60" selected>60 minutes (maximum)</option></select><label class="label" for="motivationStyle">How should my coach encourage me?</label><select id="motivationStyle"><option value="gentle">Gentle & reassuring · මෘදු ලෙස</option><option value="energetic">Energetic & upbeat · උනන්දුවෙන්</option><option value="practical">Practical & goal-focused · ඉලක්කයට</option></select><label class="label" for="personalGoal">My English goal</label><textarea id="personalGoal" placeholder="Speak confidently at university, interviews and in daily life."></textarea><button class="btn full" id="saveProfile">Save my learning profile</button></div><div class="card"><div class="hstack"><strong>Optional real AI connection</strong><span class="badge offline" id="serviceState">Not connected</span></div><p class="note">Grammar and vocabulary lessons work even when the AI server is unavailable. For real AI replies, an eligible account owner must deploy the included Cloudflare Worker and share the HTTPS URL and a private coach access code. Cloudflare free AI quotas and provider terms apply; long voice conversations may reach the limit. Do not enter third-party API keys here.</p><label class="label" for="endpoint">My AI Worker URL (HTTPS)</label><input id="endpoint" class="input" type="url" placeholder="https://your-coach.your-domain.workers.dev"><label class="label" for="accessCode">Coach access code (required; not saved)</label><input id="accessCode" class="input" type="password" placeholder="From the backend owner · not an API key"><div class="rowButtons"><button class="btn" id="saveEndpoint">Save URL</button><button class="btn secondary" id="testEndpoint">Test connection</button></div><p id="connectionResult" class="note">⚠ Don't paste private AI API keys into this app. Conversation messages are sent to your configured backend when Online AI is enabled.</p></div></div><div class="card" style="margin-top:13px"><div class="hstack"><strong>🔔 Daily practice reminder</strong><span class="tag">CHOOSE YOUR TIME</span></div><p class="note">දවසට විනාඩි 15–60ක් English practice කරන්න මතක් කිරීමක්. Set your own time; reminders are optional.</p><label class="label" for="reminderTime">Reminder time</label><input id="reminderTime" class="input" type="time" value="19:00" style="max-width:210px"><label class="reminderToggle"><input id="reminderEnabled" type="checkbox"> <span>Send me a reminder every day</span></label><div class="rowButtons"><button class="btn" id="saveReminder">Save reminder</button><button class="btn outline" id="testReminder">Test reminder</button></div><p id="reminderStatus" class="note" aria-live="polite">Android app: scheduled local notifications (may arrive a little later to save battery). Web app: alerts only while it is open. Notification permission may be required.</p></div><div class="card" style="margin-top:13px"><div class="hstack"><strong>Back up your learning</strong><span class="tag">YOUR DATA</span></div><p class="note">Your learning history is saved in this browser/device. Clearing its storage may erase your progress. Export regularly.</p><div class="rowButtons"><button id="exportData" class="btn">↓ Export backup</button><label for="importData" class="btn secondary" style="cursor:pointer">↑ Import backup</label><input id="importData" type="file" accept="application/json" class="hide"><button id="resetAll" class="btn warn">Reset my data</button></div></div><div class="footer">FluentMe AI • Independent educational project, not affiliated with ELSA Speak. Live AI needs a third-party backend. Browser speech services may process voice online; do not share sensitive personal information in chats.</div></section>
+</main><nav class="nav" aria-label="Bottom navigation"><button data-go="home" class="active"><span>⌂</span>Home</button><button data-go="coach"><span>🎙</span>Coach</button><button data-go="practice"><span>✍</span>Practice</button><button data-go="journey"><span>▥</span>Journey</button><button data-go="smart"><span>✦</span>Smart</button><button data-go="settings"><span>⚙</span>Settings</button></nav><div id="toast" class="toast" role="status" aria-live="polite"></div><script>
+'use strict';
+// FluentMe AI: local-first progress with online voice and text AI conversations.
+const $=id=>document.getElementById(id);
+const STORE='fluentme-ai-v3';
+const tasks=[{id:'speaking',emoji:'🎙',name:'Speak with your coach',minutes:20,detail:'A conversation, out loud or typed',tab:'coach'}, {id:'grammar',emoji:'✍',name:'Grammar studio',minutes:15,detail:'Answer and understand corrections',tab:'practice'}, {id:'vocab',emoji:'📖',name:'Vocabulary trainer',minutes:15,detail:'Learn and recall useful words',tab:'practice'}, {id:'listening',emoji:'🎧',name:'Listen and repeat',minutes:10,detail:'Build confidence with phrases',tab:'practice'}];
+const grammar=[
+{topic:'Past tense',q:'Yesterday, I ___ to university.',a:['go','went','gone'],c:1,why:'“Yesterday” අතීතය නිසා “went” යොදනවා. Go → went.'},
+{topic:'Present simple',q:'She ___ accounting every evening.',a:['study','studies','studying'],c:1,why:'He/She/It සමඟ simple present verb එකට -s/-es යොදනවා.'},
+{topic:'Articles',q:'I want to become ___ accountant.',a:['a','an','the'],c:1,why:'“Accountant” vowel sound එකකින් පටන් ගන්න නිසා “an” යොදනවා.'},
+{topic:'Questions',q:'___ you speak English every day?',a:['Does','Do','Are'],c:1,why:'You සමඟ present simple ප්‍රශ්න සඳහා Do යොදනවා.'},
+{topic:'Verb forms',q:'I enjoy ___ English.',a:['learn','learning','learned'],c:1,why:'Enjoy පසුව verb + ing භාවිත කිරීම සාමාන්‍යයයි.'},
+{topic:'Prepositions',q:'I am interested ___ finance.',a:['on','at','in'],c:2,why:'Interested in යනු නිවැරදි expression එකයි.'},
+{topic:'Past negative',q:'I ___ attend class yesterday.',a:["didn't","doesn't","don't"],c:0,why:'Past negative: did not + base verb.'},
+{topic:'Present continuous',q:'Right now, they ___ studying.',a:['is','are','am'],c:1,why:'They සමඟ are යොදන්න.'},
+{topic:'Conditional',q:'If I practise, I ___ improve.',a:['would','will','was'],c:1,why:'Real future possibility සඳහා if + present, will + verb යොදන්න පුළුවන්.'},
+{topic:'Polite requests',q:'___ you please repeat that?',a:['Could','Was','Did'],c:0,why:'Could you please...? ආචාරශීලී ඉල්ලීමක්.'},
+{topic:'Comparatives',q:'This lesson is ___ than the last one.',a:['easy','easier','easiest'],c:1,why:'Than සමඟ comparative “easier” යොදනවා.'},
+{topic:'Perfect tense',q:'I have ___ my assignment.',a:['finish','finished','finishing'],c:1,why:'Present perfect: have/has + past participle.'}
+];
+const words=[
+['confident','ආත්ම විශ්වාසයෙන් යුතු','I feel confident when I practise.'],['opportunity','අවස්ථාව','This interview is a good opportunity.'],['improve','දියුණු කරන්න','I want to improve my English.'],['consistent','නිරන්තරයෙන් කරන','Consistent effort makes a difference.'],['achieve','ළඟා කරගන්න','I will achieve my learning goals.'],['explain','පැහැදිලි කරන්න','Could you explain that again?'],['fluent','චතුර ලෙස කතා කරන','She speaks fluent English.'],['responsibility','වගකීම','I take responsibility for my work.'],['schedule','කාලසටහන','I follow a regular study schedule.'],['prepare','සූදානම් වෙන්න','I need to prepare for the exam.'],['clarify','පැහැදිලි කරගන්න','Can I clarify one thing?'],['discuss','සාකච්ඡා කරන්න','Let us discuss the main idea.'],['reliable','විශ්වාස කළ හැකි','We need reliable information.'],['efficient','කාර්යක්ෂම','This is an efficient method.'],['present','ඉදිරිපත් කරන්න','I will present the results tomorrow.'],['progress','ප්‍රගතිය','My progress improves with practice.'],['challenge','අභියෝගය','A difficult conversation is a challenge.'],['perspective','දෘෂ්ටිකෝණය','I understand your perspective.']
+].map(([word,meaning,example])=>({word,meaning,example}));
+const phrases=[['Could you please speak a little more slowly?','කරුණාකර ටිකක් හිමින් කතා කරන්න පුළුවන්ද?'],['I am currently studying accounting.','මම දැනට ගිණුම්කරණය හදාරනවා.'],['I would like to share my opinion.','මගේ අදහස ඉදිරිපත් කරන්න කැමතියි.'],['Can you explain that with an example?','උදාහරණයක් සමඟ පැහැදිලි කරන්න පුළුවන්ද?'],['I am improving my English step by step.','මම පියවරෙන් පියවර English දියුණු කරනවා.'],['I need a little more time to think.','හිතන්න තව ටිකක් වෙලාව ඕනේ.'],['What do you recommend for a beginner?','ආරම්භකයෙකුට ඔබ යෝජනා කරන්නේ කුමක්ද?'],['I learned something useful today.','අද මම වැදගත් දෙයක් ඉගෙනගත්තා.']];
+const conversations={
+'Daily life':['Hi! How was your day?','What did you do this morning?','Tell me something interesting about today.','What would you like to do tomorrow?'],
+'University':['What subject are you studying?','Why did you choose that subject?','Describe your favourite lesson.','What is one skill you want to improve?'],
+'Job interview':['Please introduce yourself in two sentences.','What are your strengths?','Why are you interested in this role?','Tell me about a challenge you solved.'],
+'Everyday situations':['Imagine you are ordering at a café. What would you say?','How would you politely ask for directions?','How do you ask someone to repeat themselves?','Tell me about a recent shopping experience.']
+};
+const initial=()=>({version:3,profile:{name:'',level:'A1',goalMinutes:60,goal:'Speak English confidently in daily life.',motivationStyle:'gentle'},days:{},xp:0,wordProgress:{},corrections:[],chat:[],endpoint:'',reminder:{enabled:false,time:'19:00',lastNotified:''}});
+let data;try{data=Object.assign(initial(),JSON.parse(localStorage.getItem(STORE)||'{}'));}catch{data=initial()}data.days||={};data.wordProgress||={};data.corrections||=[];data.chat||=[];data.coachMemory=String(data.coachMemory||'').slice(0,480);data.profile={...initial().profile,...(data.profile||{})};data.reminder={...initial().reminder,...(data.reminder||{})};
+let topic='Daily life',coachMode='ai',chatStep=0,lastCoach='',grammarIndex=0,answered=false,wordIndex=0,phraseIndex=0,practiceTab='grammar',timerEnd=0,timerTick=null,timerActive=false,timerType='speaking',accessCode='';
+const dateKey=(dt=new Date())=>[dt.getFullYear(),String(dt.getMonth()+1).padStart(2,'0'),String(dt.getDate()).padStart(2,'0')].join('-');
+const blankDay=()=>({minutes:{speaking:0,grammar:0,vocab:0,listening:0},chats:0,grammar:0,correct:0,vocab:0,repeats:0,tasks:{},activities:0});
+const practiceLengths={15:[5,4,4,2],30:[10,8,7,5],35:[15,8,7,5],40:[15,10,10,5],45:[15,12,10,8],60:[20,15,15,10]};
+function applyLearningPlan(){
+ const mins=practiceLengths[Number(data.profile.goalMinutes)]||practiceLengths[60];
+ tasks.forEach((t,i)=>t.minutes=mins[i]);
+ ['speaking','grammar','vocab','listening'].forEach((key,i)=>{const el=$('focusType')?.querySelector('option[value="'+key+'"]');if(el)el.textContent=tasks[i].emoji+' '+tasks[i].name+' · '+mins[i]+'m'});
+ const heading=$('planTitle');if(heading)heading.textContent=data.profile.goalMinutes+'-minute flexible plan';
+ const caption=$('planCaption');if(caption)caption.textContent='Choose 15–60 minutes. One hour is the maximum, not a daily obligation.';
+ const sub=$('todayGoalNote');if(sub)sub.textContent='of '+data.profile.goalMinutes+'m target';
+ const headline=$('heroSubtitle');if(headline)headline.textContent='A flexible English routine of up to 60 minutes—speaking, grammar, vocabulary and listening.';
+}
+function getDay(k=dateKey()){if(!data.days[k])data.days[k]=blankDay();data.days[k].minutes||={speaking:0,grammar:0,vocab:0,listening:0};data.days[k].tasks||={};return data.days[k]}
+const totalM=d=>Object.values(d?.minutes||{}).reduce((s,n)=>s+Number(n||0),0);
+// Motivation is local, personalised by recorded practice and preferences; it is not a mental-health assessment or an AI-generated score.
+const encouragements={
+ gentle:[['Your pace is enough.','ඔයාට පුළුවන්. Take one sentence at a time.'],['Small steps are real progress.','අද පුංචි practice එකක් කළත් ඒක වටිනවා.'],['A fresh start is always available.','A missed day does not erase what you learned.'],['You are allowed to learn slowly.','Mistakes help you discover what to practise next.']],
+ energetic:[['Let your English grow!','Ready for one more confident sentence?'],['You showed up!','Every practice adds useful experience.'],['One sentence, then another!','Make today a small English adventure.'],['Practice power!','Try speaking out loud for just five minutes.']],
+ practical:[['Build the habit, not pressure.','Today: say three sentences and review one correction.'],['Consistency is flexible.','Choose a five-minute task when you are busy.'],['Make your learning visible.','Review a phrase you struggled with last week.'],['A clear next step helps.','Start with one simple question and answer.']]
+};
+const missions=[['Tell me three sentences about your day.','Daily life'],['Introduce yourself in three sentences.','University'],['Describe one thing you learned today.','University'],['Say what you want to do tomorrow.','Daily life'],['Explain one of your strengths in English.','Job interview'],['Politely ask for something in English.','Everyday situations'],['Describe why you are learning English.','University']];
+let cheerIndex=0;
+function practicedDates(){return Object.entries(data.days).filter(([,d])=>(d.activities||0)>0||totalM(d)>0).length}
+function motivationForToday(next=false){
+ const day=getDay(),minutes=totalM(day),actions=day.activities||0,style=data.profile.motivationStyle||'gentle';
+ if(next)cheerIndex++;
+ const choices=encouragements[style]||encouragements.gentle;
+ const hash=[...dateKey()].reduce((a,ch)=>a+ch.charCodeAt(0),0);
+ const pair=choices[(hash+cheerIndex)%choices.length];
+ const intro=minutes>=data.profile.goalMinutes&&minutes>0?['You reached your practice goal!','Well done! Enjoy a break, or practise more if you feel like it.']:
+  actions>=3?['Look at the practice you completed!','You have already tried several English activities today.']:
+  actions>=1?['Your first step is done!','You started practising. You can continue at your own pace.']:
+  practicedDates()>0?['Welcome back to English practice!','Your past learning still counts, even after a break.']:null;
+ const mission=missions[(hash)%missions.length];
+ $('motivationTitle').textContent=(cheerIndex===0&&intro?intro[0]:pair[0]);
+ $('motivationMessage').textContent=(cheerIndex===0&&intro?intro[1]:pair[1]);
+ $('miniMissionText').textContent=mission[0];
+ $('motivationStatus').textContent=`${practicedDates()} practice days`;
+}
+function renderGrowth(){
+ const n=practicedDates(),all=Object.values(data.days),completed=all.reduce((sum,d)=>sum+totalM(d),0),corrections=data.corrections.length;
+ $('weeklyCoachNote').textContent=n===0?'Your first speaking sentence is a great place to begin.':n<3?'You have begun your English journey.':n<7?'You are building useful practice habits.':'Your practice history is growing.';
+ $('weeklyGrowthText').textContent=`You have practised on ${n} day${n===1?'':'s'} and logged ${Math.round(completed)} focused minute${Math.round(completed)===1?'':'s'} overall. Mistakes are learning opportunities. Your next step: try one English conversation.`;
+ const wins=[['🎙 First practice day',n>=1],['🌱 Three different practice days',n>=3],['📚 Seven practice days',n>=7],['🏅 Twenty practice days',n>=20],['✍ Corrected an English sentence',corrections>=1]];
+ $('milestones').innerHTML='';wins.forEach(([name,done])=>{const el=document.createElement('div');el.className='winItem'+(done?' unlocked':'');el.textContent=(done?'✓ ':'○ ')+name;$('milestones').appendChild(el)});
+}
+
+function save(){try{localStorage.setItem(STORE,JSON.stringify(data))}catch{toast('Storage is full. Export a backup in Settings.')}renderHome()}
+function toast(msg){const el=$('toast');el.textContent=msg;el.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>el.style.display='none',3100)}
+function go(name){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===name));document.querySelectorAll('[data-go]').forEach(b=>b.classList.toggle('active',b.dataset.go===name&&b.closest('.nav')));if(name==='journey')renderJourney();window.scrollTo({top:0,behavior:'instant'})}
+function countStreak(){let d=new Date(),n=0;for(let i=0;i<2000;i++){const k=dateKey(d),r=data.days[k];if(r && (r.activities>0||totalM(r)>0)){n++}else if(i!==0)break;d.setDate(d.getDate()-1)}return n}
+function xp(n){data.xp=(data.xp||0)+n}
+function activity(kind,correct){const d=getDay();d.activities++;if(kind==='speaking')d.chats++;if(kind==='grammar'){d.grammar++;if(correct)d.correct++}if(kind==='vocab')d.vocab++;if(kind==='listening')d.repeats++;xp(kind==='grammar'?(correct?12:4):8);save()}
+function renderHome(){applyLearningPlan();const d=getDay(),total=totalM(d),goal=data.profile.goalMinutes||35,done=tasks.filter(t=>d.tasks[t.id]).length;
+$('heroName').textContent=data.profile.name?`You've got this, ${data.profile.name}!`:'Small steps. Big fluency.';$('metricStreak').textContent=countStreak();$('metricMinutes').textContent=Math.round(total)+'m';$('metricXP').textContent=data.xp||0;$('metricWords').textContent=Object.values(data.wordProgress).filter(w=>w.known).length;$('todayDate').textContent=new Date().toLocaleDateString('en-GB',{weekday:'short',month:'short',day:'numeric'});$('todayPercent').textContent=`${done} / 4`;$('pathBar').style.width=`${done/4*100}%`;
+motivationForToday();$('pathTasks').innerHTML='';tasks.forEach(t=>{const row=document.createElement('div');row.className='task';const emoji=document.createElement('div');emoji.className='emoji';emoji.textContent=t.emoji;const body=document.createElement('div');body.className='txt';const name=document.createElement('strong');name.textContent=t.name;const detail=document.createElement('small');detail.textContent=t.detail;body.append(name,detail);const btn=document.createElement('button');btn.className='chip'+(d.tasks[t.id]?' active':'');btn.textContent=d.tasks[t.id]?'✓ Done':`${t.minutes}m · Open`;btn.onclick=()=>{if(d.tasks[t.id]){d.tasks[t.id]=false;save()}else{go(t.tab);if(t.tab==='practice')selectPractice(t.id==='listening'?'pronunciation':t.id==='vocab'?'vocab':'grammar');toast('Practise, then tick the task on Home.');}};row.append(emoji,body,btn);$('pathTasks').appendChild(row)});
+if(total>=goal && !d.goalShown){d.goalShown=true;localStorage.setItem(STORE,JSON.stringify(data));toast('🌟 Your daily practice goal is complete!')} }
+function markTaskFor(kind){const d=getDay();if(!d.tasks[kind]){d.tasks[kind]=true;save()}}
+const greetings={A1:'Speak in short, clear sentences. I will help you practise.',A2:'Use simple details and try answering in two sentences.',B1:'Give examples and explain your ideas.',B2:'Try using more precise words and longer answers.',C1:'Explore nuanced points and express your reasoning.'};
+function bubble(text,mine=false,small=''){const box=document.createElement('div');box.className='bubble'+(mine?' me':'');box.textContent=text;if(small){const s=document.createElement('small');s.textContent=small;box.appendChild(s)}$('chatLog').appendChild(box);$('chatLog').scrollTop=$('chatLog').scrollHeight;if(!mine)lastCoach=text}
+function resetChat(clear=false){
+ chatStep=0;$('chatLog').innerHTML='';$('chatFeedback').classList.add('hide');
+ if(clear){data.chat=[];save();}
+ if(data.chat.length){
+  bubble('Welcome back. We can carry on from our previous conversation.',false,'AI English conversation');
+  data.chat.forEach(m=>bubble(m.content,m.role==='user'));
+  const prev=[...data.chat].reverse().find(m=>m.role==='assistant');if(prev)lastCoach=prev.content;
+ }else bubble('Hello! Tell me about your day. I will listen and respond in English.',false,'AI conversation · voice or text');
+}
+function analysis(s){const rules=[[/\bi am agree\b/ig,'I agree','“I agree” කියන්න. “am” අවශ්‍ය නැහැ.'],[/\byesterday i go\b/ig,'Yesterday I went','Yesterday නිසා go → went.'],[/\bi didn't went\b/ig,"I didn't go",'didn’t පසුව base verb යොදන්න.'],[/\bhe go\b/ig,'he goes','He සමඟ goes යොදනවා.'],[/\bshe go\b/ig,'she goes','She සමඟ goes යොදනවා.'],[/\bi has\b/ig,'I have','I සමඟ have යොදනවා.'],[/\bi am study\b/ig,'I am studying','am + verb-ing භාවිත කරන්න.'],[/\bi very like\b/ig,'I really like','ස්වභාවික expression එක “I really like ...”']];for(const [regex,repl,why] of rules)if(regex.test(s))return{correction:s.replace(regex,repl),why};return null}
+let voiceModeActive=false,voiceAutoListening=false,voiceRecognizer=null,voiceSpeaking=false;
+function voiceStatus(s){const el=$('voiceStatus');if(el)el.textContent=s;const b=$('voiceChip');if(b){b.textContent=voiceModeActive?'Voice on':'Off';b.classList.toggle('offline',!voiceModeActive)}}
+function stopVoice(){voiceModeActive=false;voiceAutoListening=false;
+ if(voiceRecognizer){try{voiceRecognizer.abort()}catch(e){}voiceRecognizer=null;}
+ if('speechSynthesis' in window){try{speechSynthesis.cancel()}catch(e){}}
+ voiceSpeaking=false;voiceStatus('Stopped. Tap Start speaking when you want to speak again.');}
+function sayConversation(text){
+ if(!voiceModeActive)return;
+ // Android native TTS is supported; the next listening turn requires another tap.
+ if(window.FluentNative&&typeof window.FluentNative.speak==='function'){
+   window.FluentNative.speak(text);voiceStatus('AI is speaking. Tap Start speaking after it finishes.');return;
+ }
+ if(!('speechSynthesis' in window)){voiceStatus('Voice output is not supported here. Read the message or tap Hear teacher.');return;}
+ try{
+   speechSynthesis.cancel();voiceSpeaking=true;
+   const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.9;u.pitch=1;
+   u.onend=()=>{voiceSpeaking=false;if(!voiceModeActive)return;if(voiceAutoListening&&document.visibilityState==='visible')beginVoiceRecognition(true);else voiceStatus('Your turn. Tap Start speaking to answer.');};
+   u.onerror=()=>{voiceSpeaking=false;voiceStatus('Audio stopped. Tap Start speaking for your turn.');};
+   speechSynthesis.speak(u);
+ }catch(e){voiceStatus('Could not play voice. You can still read the reply.');}
+}
+function beginVoiceRecognition(isAuto=false){
+ if(!voiceModeActive||responding||voiceSpeaking)return;
+ 
+ if(!data.endpoint){voiceStatus('Add and test your AI Worker URL in Settings first.');return;}
+ // Native Android speech-intent bridge returns one utterance; no always-on microphone.
+ if(window.FluentNative&&typeof window.FluentNative.listen==='function'){
+   voiceStatus('Listening via Android speech recognition…');
+   speakInto(s=>{if(!voiceModeActive)return;$('chatInput').value=s;voiceStatus('You said: '+s);sendChat();});
+   return;
+ }
+ const R=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(!R){voiceStatus('Speech recognition is not available in this browser. Try Chrome or type your sentence.');return;}
+ try{
+   const rec=new R();voiceRecognizer=rec;rec.lang='en-US';rec.continuous=false;rec.interimResults=false;rec.maxAlternatives=1;
+   let heard=false;
+   rec.onresult=e=>{if(!voiceModeActive)return;heard=true;const heardText=String(e.results[0][0].transcript||'').trim();voiceRecognizer=null;if(!heardText){voiceStatus('Nothing heard. Tap Talk and try again.');return;}$('chatInput').value=heardText;voiceStatus('You said: '+heardText+' · Waiting for AI…');sendChat();};
+   rec.onerror=e=>{voiceRecognizer=null;if(voiceModeActive)voiceStatus('Microphone: '+e.error+'. Tap Talk to retry or type.');};
+   rec.onend=()=>{if(voiceRecognizer===rec)voiceRecognizer=null;if(voiceModeActive&&!heard)voiceStatus('I didn’t hear your words. Tap Talk to try again.');};
+   voiceStatus(isAuto?'Listening again…':'Listening… speak English now.');rec.start();
+ }catch(e){voiceRecognizer=null;voiceStatus('Could not start microphone. Check Chrome permissions.');}
+}
+function installVoiceUI(){
+ $('voiceStart').onclick=()=>{voiceModeActive=true;voiceAutoListening=$('voiceAuto').checked;beginVoiceRecognition(false)};
+ $('voiceStop').onclick=stopVoice;
+ $('voiceAuto').onchange=()=>{voiceAutoListening=$('voiceAuto').checked;if(voiceModeActive)voiceStatus(voiceAutoListening?'Automatic listening after AI voice is enabled.':'Automatic listening is off.')};
+ $('coachMemory').value=data.coachMemory||'';
+ $('saveCoachMemory').onclick=()=>{data.coachMemory=$('coachMemory').value.trim().slice(0,480);save();toast('Your learning notes were saved on this device.')};
+ $('forgetCoachMemory').onclick=()=>{data.coachMemory='';$('coachMemory').value='';save();toast('Your learning notes are cleared.')};
+ window.addEventListener('pagehide',()=>{if(voiceModeActive)stopVoice()});
+ voiceStatus('Ready. Tap Start speaking and start speaking.');
+}
+
+let responding=false, aiVerified=false;
+async function sendChat(){const val=$('chatInput').value.trim();if(!val||responding)return;$('chatInput').value='';bubble(val,true);activity('speaking');data.chat.push({role:'user',content:val});data.chat=data.chat.slice(-30);const fb=$('chatFeedback');fb.classList.remove('hide');
+if(!data.endpoint){fb.textContent='⚠ Connect your existing Cloudflare AI Worker in Settings to start the conversation.';return}
+responding=true;$('sendBtn').disabled=true;bubble('Thinking…',false);const loading=$('chatLog').lastElementChild;
+try{const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),25000);let r;try{r=await fetch(data.endpoint,{method:'POST',headers:{'Content-Type':'application/json',...(accessCode?{'X-Coach-Code':accessCode}:{})},body:JSON.stringify({messages:data.chat.slice(-20),memory:data.coachMemory||'',learningGoal:data.profile.goal||'',level:data.profile.level,topic}),signal:controller.signal})}finally{clearTimeout(timeout)}if(!r.ok){const details=await r.json().catch(()=>({}));throw Error(details.error||'AI service returned '+r.status)}let result=await r.json();let reply=String(result.reply||'').slice(0,2200);if(!reply)throw Error('AI response is empty');
+loading.textContent=reply;lastCoach=reply;aiVerified=true; if(voiceModeActive){voiceStatus('AI speaking…');sayConversation(reply);}
+if(result.correction&&typeof result.correction==='string'){
+  const correction=result.correction.slice(0,400),reason=String(result.whySinhala||'Review this suggested correction.').slice(0,400);
+  data.corrections.unshift({date:dateKey(),original:val,correct:correction,reason,source:'AI suggestion'});
+  data.corrections=data.corrections.slice(0,70);
+  fb.textContent='✍ Suggested correction: '+correction+'\n🇱🇰 '+reason+'\nAI suggestions can make mistakes. Review before memorising.';
+}else fb.textContent= typeof result.feedback==='string'?result.feedback.slice(0,1000):'Tip: Listen, repeat, and answer in your own words.';
+data.chat.push({role:'assistant',content:reply});data.chat=data.chat.slice(-30);markTaskFor('speaking');save();
+$('coachBadge').textContent='Online AI · connected';renderSettings();}catch(err){loading.textContent='No AI reply yet. Check Settings, then try again.';fb.textContent=`⚠ ${err.message}. Check the connection under Settings. Your learning history is still saved.`; if(voiceModeActive){voiceStatus('Could not get an AI reply. Tap Talk to retry.');}}finally{responding=false;$('sendBtn').disabled=false}}
+function refreshCoachConnection(){
+ $('aiNotice').classList.toggle('hide',Boolean(data.endpoint));
+ $('coachBadge').textContent='Online AI · '+(aiVerified?'connected':data.endpoint?'needs test':'not connected');
+ $('coachBadge').classList.toggle('offline',!aiVerified);
+}
+function say(text){if(!text)return;if(window.FluentNative&&typeof window.FluentNative.speak==='function'){window.FluentNative.speak(text);return}if(!('speechSynthesis' in window)){toast('Text-to-speech not supported on this device.');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.86;speechSynthesis.speak(u)}
+let onTranscript=null;
+function speakInto(cb){onTranscript=cb;const R=window.SpeechRecognition||window.webkitSpeechRecognition;
+if(window.FluentNative&&typeof window.FluentNative.listen==='function'){$('micStatus').textContent='🎤 Your phone will open speech recognition. Speak English.';window.FluentNative.listen();return}
+if(!R){toast('Voice input needs a compatible browser or Android app. Text works here.');return}try{const rec=new R();rec.lang='en-US';rec.interimResults=false;rec.maxAlternatives=1;rec.onresult=e=>cb(e.results[0][0].transcript);rec.onerror=e=>toast('Microphone: '+e.error);rec.start()}catch{toast('Could not start speech recognition. Please use text.')}}
+window.fluentVoiceResult=transcript=>{if(typeof onTranscript==='function')onTranscript(String(transcript||''))};window.fluentVoiceError=message=>toast(String(message||'Speech input unavailable'));
+function selectPractice(tab){practiceTab=tab;document.querySelectorAll('[data-practice]').forEach(b=>b.classList.toggle('selected',b.dataset.practice===tab));['grammar','vocab','pronunciation'].forEach(p=>$(p+'Panel').classList.toggle('hide',p!==tab))}
+function renderGrammar(){const q=grammar[grammarIndex%grammar.length];answered=false;$('grammarTopic').textContent=q.topic;$('grammarIndex').textContent=`Question ${grammarIndex%grammar.length+1} / ${grammar.length}`;$('grammarPrompt').textContent=q.q;$('grammarFeedback').classList.add('hide');$('grammarChoices').innerHTML='';q.a.forEach((option,i)=>{const b=document.createElement('button');b.className='qoption';b.textContent=option;b.onclick=()=>{if(answered)return;answered=true;document.querySelectorAll('.qoption').forEach((el,j)=>{el.disabled=true;if(j===q.c)el.classList.add('good');else if(j===i)el.classList.add('bad')});$('grammarFeedback').classList.remove('hide');$('grammarFeedback').textContent=(i===q.c?'✅ Correct!':'✍ Correct answer: '+q.a[q.c]+'.')+'\n🇱🇰 '+q.why;activity('grammar',i===q.c);markTaskFor('grammar')};$('grammarChoices').appendChild(b)})}
+function vocabOrder(){return [...words].sort((a,b)=>(data.wordProgress[a.word]?.nextDue||'') .localeCompare(data.wordProgress[b.word]?.nextDue||''))}
+function renderWord(){const w=vocabOrder()[wordIndex%words.length];$('wordTitle').textContent=w.word;$('wordSample').textContent=w.example;$('wordMeaning').textContent='🇱🇰 '+w.meaning;$('wordMeaning').classList.add('hide');$('wordLabel').textContent=`WORD ${wordIndex%words.length+1} / ${words.length}`;const p=data.wordProgress[w.word];$('wordDue').textContent=p?`${p.known?'Remembered':'Needs practice'} · next review ${p.nextDue||'soon'}`:'New word · say it aloud and make a sentence.'}
+function updateWord(known){const w=vocabOrder()[wordIndex%words.length];const previous=data.wordProgress[w.word]||{times:0};const times=known?(previous.times||0)+1:0;const later=new Date();later.setDate(later.getDate()+ (known? Math.min(30,Math.pow(2,Math.min(times,5))):1));data.wordProgress[w.word]={known:known,times,nextDue:dateKey(later)};activity('vocab');markTaskFor('vocab');wordIndex++;renderWord()}
+function renderPhrase(){let p=phrases[phraseIndex%phrases.length];$('phraseText').textContent=p[0];$('phraseMeaning').textContent=p[1];$('phraseFeedback').classList.add('hide')}
+function compareSpeech(expected,spoken){const a=expected.toLowerCase().replace(/[^a-z\s]/g,'').split(/\s+/).filter(Boolean),b=spoken.toLowerCase().replace(/[^a-z\s]/g,'').split(/\s+/).filter(Boolean);let found=0;const remaining=[...b];for(let v of a){const k=remaining.indexOf(v);if(k!==-1){found++;remaining.splice(k,1)}}return Math.round(found/Math.max(1,a.length)*100)}
+function addMinutes(type,min){const d=getDay();d.minutes[type]=(d.minutes[type]||0)+Math.max(0,Math.min(60-totalM(d),min));markTaskFor(type);save()}
+function renderTimer(){const type=$('focusType').value;let len=tasks.find(t=>t.id===type).minutes*60;let remaining=timerActive?Math.max(0,Math.ceil((timerEnd-Date.now())/1000)):len;if(timerActive&&remaining<=0){clearInterval(timerTick);timerActive=false;addMinutes(timerType,tasks.find(t=>t.id===timerType).minutes);$('timerNotice').textContent='✓ Completed! Your time was saved to today’s journey.';toast('Great work! Focus session recorded.');remaining=len}$('focusClock').textContent=`${String(Math.floor(remaining/60)).padStart(2,'0')}:${String(remaining%60).padStart(2,'0')}`;$('timerStart').textContent=timerActive?'Pause & discard':'▶ Start';$('focusType').disabled=timerActive}
+function renderJourney(){let sum=0,maximum=1,arr=[];for(let n=6;n>=0;n--){const dt=new Date();dt.setDate(dt.getDate()-n);const v=Math.round(totalM(data.days[dateKey(dt)]));maximum=Math.max(maximum,v);sum+=v;arr.push({k:dateKey(dt),label:dt.toLocaleDateString('en-US',{weekday:'short'}),v})}$('weeklyMinutes').textContent=sum+'m total';$('weeklyChart').innerHTML='';arr.forEach(x=>{const col=document.createElement('div');col.className='chartcol';const bar=document.createElement('div');bar.className='chartbar';bar.style.height=Math.max(3,Math.round(x.v/maximum*91))+'px';bar.title=x.v+' minutes';const label=document.createElement('small');label.textContent=x.label;col.append(bar,label);$('weeklyChart').appendChild(col)});const ds=Object.values(data.days);$('totalSpeak').textContent=ds.reduce((s,x)=>s+(x.chats||0),0);$('totalGrammar').textContent=ds.reduce((s,x)=>s+(x.correct||0),0);$('totalListen').textContent=ds.reduce((s,x)=>s+(x.repeats||0),0);$('roadmap').innerHTML='';[['A1 · Foundations','Introduce yourself, simple sentences'],['A2 · Everyday English','Daily routines, questions & stories'],['B1 · Independent speaker','Express opinions and explain examples'],['B2+ · Confidence','Interviews, presentations & detailed discussion']].forEach(([a,b],i)=>{const el=document.createElement('div');el.className='task';el.textContent=`${i+1}. ${a} — ${b}`;$('roadmap').appendChild(el)});$('historyCalendar').innerHTML='';for(let i=27;i>=0;i--){const dt=new Date();dt.setDate(dt.getDate()-i);const key=dateKey(dt),rec=data.days[key];const button=document.createElement('button');button.className='daycell'+(rec&&rec.activities>0?' active':'')+(key===dateKey()?' today':'');button.textContent=dt.getDate();button.title=key;button.onclick=()=>{$('historyDetail').textContent=`${key}\n${Math.round(totalM(rec))} minutes · ${rec?.chats||0} conversations · ${rec?.grammar||0} grammar answers · ${rec?.vocab||0} vocabulary reviews`};$('historyCalendar').appendChild(button)}$('errorHistory').innerHTML='';if(!data.corrections.length)$('errorHistory').textContent='No corrections saved yet. Have a conversation with your AI teacher.';data.corrections.slice(0,10).forEach(c=>{const el=document.createElement('div');el.className='explain';el.textContent=`${c.original} → ${c.correct}\n${c.reason}`;$('errorHistory').appendChild(el)});renderGrowth()}
+function renderSettings(){$('studentName').value=data.profile.name;$('level').value=data.profile.level;$('goalMinutes').value=String(data.profile.goalMinutes);$('personalGoal').value=data.profile.goal;$('motivationStyle').value=data.profile.motivationStyle||'gentle';$('endpoint').value=data.endpoint||'';$('reminderTime').value=data.reminder.time||'19:00';$('reminderEnabled').checked=Boolean(data.reminder.enabled);$('topMode').textContent=data.endpoint?'✧ AI optional':'🎙 Voice AI';$('serviceState').textContent=aiVerified?'Verified':data.endpoint?'URL saved · not verified':'Not connected';$('serviceState').classList.toggle('offline',!aiVerified)}
+function nativeReminder(){return Boolean(window.FluentNative&&typeof window.FluentNative.setDailyReminder==='function')}
+function sendLocalReminder(){const msg='Your English practice is ready! 🎙 Let’s practise together.';
+ if(nativeReminder()) { try{window.FluentNative.showReminderNow();return true}catch(e){return false} }
+ if('Notification' in window&&Notification.permission==='granted'){try{new Notification('FluentMe AI · Time to practise',{body:msg,icon:'icon.svg',tag:'fluentme-practice'});return true}catch(e){}}
+ toast('🔔 '+msg);return false;
+}
+function reminderCheck(){if(!data.reminder.enabled||nativeReminder())return;
+ const now=new Date(),t=now.toTimeString().slice(0,5),today=dateKey(now);
+ if(t>=data.reminder.time&&data.reminder.lastNotified!==today){data.reminder.lastNotified=today;save();sendLocalReminder()}
+}
+async function saveReminder(){const time=$('reminderTime').value;
+ if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(time)){toast('Choose a valid reminder time.');return}
+ data.reminder.time=time;data.reminder.enabled=$('reminderEnabled').checked;
+ if(nativeReminder()) {
+  try{if(data.reminder.enabled){window.FluentNative.setDailyReminder(time)}else{window.FluentNative.cancelDailyReminder()}}catch(e){toast('Could not update native reminders: '+e.message)}
+  $('reminderStatus').textContent=data.reminder.enabled?'Android daily reminder scheduled around '+time+'. Allow notifications if your phone asks.':'Daily reminders turned off.';
+ } else {
+  if(data.reminder.enabled && 'Notification' in window && Notification.permission==='default'){
+    try{await Notification.requestPermission()}catch(e){}
+  }
+  $('reminderStatus').textContent=data.reminder.enabled?'Saved. Web alerts work only while this app page is open; background daily alerts need an installed Android app.':'Daily reminders turned off.';
+ }
+ save();toast('Reminder preferences saved.');
+}
+function validEndpoint(value){try{const url=new URL(value);return url.protocol==='https:'&&Boolean(url.hostname)&&!url.username&&!url.password&&url.port===''}catch{return false}}
+function exportBackup(){const a=document.createElement('a');const url=URL.createObjectURL(new Blob([JSON.stringify({app:'FluentMeAI',data,exported:new Date().toISOString()},null,2)],{type:'application/json'}));a.href=url;a.download=`fluentme-backup-${dateKey()}.json`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
+// Event handlers
+function setup(){document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',()=>{go(el.dataset.go);if(el.dataset.go==='settings')renderSettings()}));document.querySelectorAll('[data-practice]').forEach(el=>el.addEventListener('click',()=>selectPractice(el.dataset.practice)));
+Object.keys(conversations).forEach(name=>{const b=document.createElement('button');b.className='chip'+(name===topic?' active':'');b.textContent=name;b.onclick=()=>{topic=name;document.querySelectorAll('#topics .chip').forEach(x=>x.classList.toggle('active',x.textContent===name));resetChat()};$('topics').appendChild(b)});
+$('motivateMe').onclick=()=>{motivationForToday(true);toast('A little practice is enough to begin. 🌱')};$('hearMotivation').onclick=()=>say($('motivationTitle').textContent+' '+$('motivationMessage').textContent);$('tryMission').onclick=()=>{topic=missions[[...dateKey()].reduce((a,ch)=>a+ch.charCodeAt(0),0)%missions.length][1];go('coach');document.querySelectorAll('#topics .chip').forEach(x=>x.classList.toggle('active',x.textContent===topic));resetChat();toast('Try speaking your daily mission out loud!')};$('sendBtn').onclick=sendChat;$('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();sendChat()}});$('micBtn').onclick=()=>speakInto(s=>{$('chatInput').value=s;toast('Voice recognised! Check it, then tap Send.')});$('listenCoach').onclick=()=>say(lastCoach);$('newChat').onclick=()=>{stopVoice();resetChat(true);toast('Started a new conversation. Your learning notes are kept.');};
+$('grammarNext').onclick=()=>{grammarIndex++;renderGrammar()};$('wordSpeak').onclick=()=>say(vocabOrder()[wordIndex%words.length].word);$('wordReveal').onclick=()=>$('wordMeaning').classList.remove('hide');$('wordAgain').onclick=()=>updateWord(false);$('wordKnow').onclick=()=>updateWord(true);
+$('phraseListen').onclick=()=>say(phrases[phraseIndex%phrases.length][0]);$('phraseNext').onclick=()=>{phraseIndex++;renderPhrase()};$('phraseMic').onclick=()=>speakInto(s=>{const pct=compareSpeech(phrases[phraseIndex%phrases.length][0],s);$('phraseFeedback').classList.remove('hide');$('phraseFeedback').textContent=`You said: “${s}”\nApproximate word recognition match: ${pct}%. This is NOT a pronunciation or accent score. Repeat the phrase and try again.`;activity('listening');markTaskFor('listening')});
+$('timerStart').onclick=()=>{if(!timerActive&&totalM(getDay())>=60){toast('You have reached your one-hour daily practice maximum. Enjoy some rest.');return}if(timerActive){timerActive=false;clearInterval(timerTick);$('timerNotice').textContent='Stopped without adding incomplete minutes.';renderTimer();return}timerType=$('focusType').value;timerEnd=Date.now()+tasks.find(t=>t.id===timerType).minutes*60000;timerActive=true;timerTick=setInterval(renderTimer,300);$('timerNotice').textContent='Session in progress. Keep the app open until it completes.';renderTimer()};$('timerReset').onclick=()=>{timerActive=false;clearInterval(timerTick);renderTimer();$('timerNotice').textContent='Timer ready.'};$('focusType').onchange=renderTimer;$('dailyTimerBtn').onclick=()=>{go('home');$('focusClock').scrollIntoView({block:'center',behavior:'smooth'})};
+$('saveProfile').onclick=()=>{data.profile={name:$('studentName').value.trim().slice(0,40),level:$('level').value,goalMinutes:Number($('goalMinutes').value),goal:$('personalGoal').value.slice(0,400),motivationStyle:$('motivationStyle').value};save();applyLearningPlan();renderTimer();toast('Learning profile saved.')};$('saveEndpoint').onclick=()=>{const val=$('endpoint').value.trim();if(val&&!validEndpoint(val)){toast('Only HTTPS backend URLs are accepted.');return}data.endpoint=val;aiVerified=false;save();renderSettings();refreshCoachConnection();toast(val?'AI backend URL saved. Enter your access code, then test the connection.':'AI connection removed.')};$('accessCode').oninput=()=>{accessCode=$('accessCode').value};$('testEndpoint').onclick=async()=>{
+ const url=$('endpoint').value.trim();if(!validEndpoint(url)){$('connectionResult').textContent='Enter a valid HTTPS backend URL first.';return}
+ accessCode=$('accessCode').value;
+ if(!accessCode){$('connectionResult').textContent='Enter the session access code set by the backend owner.';return}
+ $('connectionResult').textContent='Testing secure connection…';aiVerified=false;
+ try{
+  const ctrl=new AbortController(),tm=setTimeout(()=>ctrl.abort(),12000);let r;
+  try{r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json','X-Coach-Code':accessCode},body:JSON.stringify({action:'check'}),signal:ctrl.signal})}finally{clearTimeout(tm)}
+  const result=await r.json().catch(()=>({}));
+  if(!r.ok)throw Error(result.error||('Server returned '+r.status));
+  if(!result.connected)throw Error('Unexpected service response. Use the included FluentMe Worker.');
+  data.endpoint=url;save();aiVerified=true;renderSettings();
+  $('connectionResult').textContent='✅ Secure backend connected and access code verified. AI reply depends on free quota; try a short message in Coach → Online AI.';
+  refreshCoachConnection();
+ }catch(err){renderSettings();$('connectionResult').textContent='⚠ Not connected: '+err.message+' (Ask the backend owner to check the Worker and code.)'}
+};
+$('saveReminder').onclick=saveReminder;$('testReminder').onclick=()=>{sendLocalReminder();toast('Reminder test triggered.')};setInterval(reminderCheck,30000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)reminderCheck()});$('exportData').onclick=exportBackup;$('importData').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;if(f.size>4e6){toast('Backup file is too large.');return}try{const contents=JSON.parse(await f.text());if(contents.app!=='FluentMeAI'||!contents.data?.days||!contents.data?.profile)throw Error('Invalid backup format');if(!confirm('Replace this device’s current learning history with backup?'))return;data={...initial(),...contents.data};save();renderSettings();renderJourney();resetChat();toast('Backup restored successfully.')}catch(err){toast('Import failed: '+err.message)}e.target.value=''};$('resetAll').onclick=()=>{if(!confirm('Delete all local FluentMe progress on this device?'))return;if(!confirm('Really delete all your local history?'))return;data=initial();save();renderSettings();renderJourney();resetChat();toast('Local data cleared.')};$('topMode').onclick=()=>{go('settings');renderSettings()};
+renderHome();renderGrammar();renderWord();renderPhrase();resetChat();refreshCoachConnection();renderTimer();renderSettings();if('serviceWorker' in navigator&&location.protocol==='https:'&&location.host!=='appassets.androidplatform.net')navigator.serviceWorker.register('./sw.js').catch(()=>{});
+}
+setup();installVoiceUI();
+
+</script><script>
+'use strict';
+// FluentMe Smart Studio extension. No external AI or hidden scoring is claimed.
+// Works with the original local-first app and its existing storage.
+const placementQuestions = [
+  {q:'She ___ from Galle.',choices:['am','is','are'],right:1,why:'She → is.'},
+  {q:'Yesterday, I ___ English.',choices:['study','studied','studies'],right:1,why:'Yesterday → past simple: studied.'},
+  {q:'There ___ three books on my desk.',choices:['is','are','be'],right:1,why:'Plural noun → there are.'},
+  {q:'I have been learning English ___ January.',choices:['for','since','at'],right:1,why:'Since + starting point.'},
+  {q:'If I have time tomorrow, I ___ you.',choices:['call','will call','called'],right:1,why:'First conditional: if + present, will + verb.'},
+  {q:'The report ___ by the accountant yesterday.',choices:['prepared','was prepared','is preparing'],right:1,why:'Passive past: was + past participle.'},
+  {q:'By the time I arrived, the meeting ___.',choices:['had started','has started','starts'],right:0,why:'An earlier past action may use past perfect.'},
+  {q:'Which sentence is most natural?',choices:['I look forward to meet you.','I look forward to meeting you.','I look forward meeting you.'],right:1,why:'Look forward to + -ing.'},
+  {q:'She suggested that we ___ the figures again.',choices:['checks','check','checking'],right:1,why:'Suggest that + base form in this formal construction.'},
+  {q:'Choose the clearest professional sentence.',choices:['Despite the delay, we completed the report.','Despite of delay, we completed the report.','Although the delay, we completed the report.'],right:0,why:'Despite + noun phrase works here.'}
+];
+const careerScenes={
+  interview:[
+    ['Tell me about yourself.','I am a commerce student who enjoys learning accounting and improving my communication skills.'],
+    ['Why do you want this role?','I want to gain practical experience while contributing to the team and developing my skills.'],
+    ['How do you handle a difficult task?','I divide the task into smaller steps and ask for clarification when necessary.']
+  ],
+  accounting:[
+    ['Explain why a business prepares a cash flow statement.','A cash flow statement explains cash movements from operating, investing and financing activities.'],
+    ['Summarize the difference between profit and cash.','Profit is calculated using accrual accounting, but cash reflects actual money received and paid.'],
+    ['Describe a simple financial result to your manager.','Revenue increased this month, while expenses remained relatively stable.']
+  ],
+  meeting:[
+    ['Politely disagree with a suggestion.','I see your point, but could we consider another approach?'],
+    ['Ask someone to explain an unfamiliar term.','Could you clarify that term and give an example, please?'],
+    ['Summarize the next action.','I will prepare the draft report and share it before our next meeting.']
+  ],
+  presentation:[
+    ['Open a short presentation confidently.','Good morning everyone. Today I will explain three key findings from our analysis.'],
+    ['Introduce a chart in your slides.','As you can see in this chart, sales increased steadily over the last three months.'],
+    ['Conclude your presentation.','To summarize, these results highlight three important opportunities. Thank you for listening.']
+  ]
+};
+let assessing=false,assessIndex=0,assessRight=0,assessChosen=false,assessLevel='A1';
+let mistakeCursor=0,mistakeVisible=false,careerCursor=0;
+function recommendLevel(right){return right<=3?'A1':right<=6?'A2':right<=8?'B1':'B2'}
+function assessRender(){
+  const q=placementQuestions[assessIndex];
+  $('assessQuestion').textContent=`${assessIndex+1}/10 · ${q.q}`;
+  $('assessStatus').textContent=`${assessIndex+1}/10`;
+  $('assessOptions').replaceChildren();
+  q.choices.forEach((s,i)=>{let b=document.createElement('button');b.className='qoption';b.textContent=s;
+    b.onclick=()=>{if(assessChosen)return;assessChosen=true;if(i===q.right)assessRight++;
+      $('assessOptions').querySelectorAll('button').forEach((x,k)=>{x.disabled=true;if(k===q.right)x.classList.add('good');else if(k===i)x.classList.add('bad')});
+      $('assessFeedback').textContent=`${i===q.right?'✓ Correct.':'Try again when you review.'} ${q.why}`;
+      $('assessStart').textContent=assessIndex===placementQuestions.length-1?'See my result →':'Next question →';
+      $('assessStart').disabled=false;
+    };$('assessOptions').appendChild(b)});
+  $('assessStart').disabled=true;
+  $('assessApply').classList.add('hide');
+}
+function assessFinish(){
+  assessing=false;assessLevel=recommendLevel(assessRight);
+  data.assessment={correct:assessRight,total:placementQuestions.length,suggested:assessLevel,date:dateKey()};
+  save();
+  $('assessStatus').textContent='CHECK COMPLETE';
+  $('assessQuestion').textContent=`${assessRight}/10 answers correct. Suggested starting level: ${assessLevel}`;
+  $('assessOptions').replaceChildren();
+  $('assessFeedback').textContent='This is only a short grammar check. Real spoken fluency requires listening and live conversation, so this is not a certified CEFR rating.';
+  $('assessStart').textContent='Retake level check';$('assessStart').disabled=false;
+  $('assessApply').textContent=`Set my level to ${assessLevel}`;$('assessApply').classList.remove('hide');renderSmart();
+}
+function beginOrNextAssessment(){
+  if(!assessing){assessing=true;assessIndex=0;assessRight=0;assessChosen=false;assessRender();return}
+  if(!assessChosen)return;
+  assessIndex++;assessChosen=false;
+  if(assessIndex>=placementQuestions.length)assessFinish();else assessRender();
+}
+function nextMistake(){
+ const corrections=data.corrections||[];
+ $('mistakeCount').textContent=`${corrections.length} SAVED`;
+ $('mistakeAnswer').classList.add('hide');mistakeVisible=false;
+ if(!corrections.length){$('mistakePrompt').textContent='No mistakes saved yet. Try speaking with the AI teacher to save corrections.';$('mistakeNote').textContent='Rule-based corrections are limited. They do not catch all mistakes.';return}
+ const c=corrections[mistakeCursor%corrections.length];
+ $('mistakePrompt').textContent=`Try correcting this sentence:\n“${c.original}”`;
+ $('mistakeNote').textContent=`Saved ${c.date||'recently'} · Reviewed ${c.reviewCount||0} time(s)`;
+}
+function currentMistake(){return data.corrections?.[mistakeCursor%(data.corrections?.length||1)]}
+function revealMistake(){const c=currentMistake();if(!c)return toast('No corrections to review yet.');
+ $('mistakeAnswer').textContent=`✓ ${c.correct}\n🇱🇰 ${c.reason}`;$('mistakeAnswer').classList.remove('hide');mistakeVisible=true;say(c.correct);
+}
+function markMistakeReviewed(){const c=currentMistake();if(!c)return toast('Try a conversation with the AI first.');if(!mistakeVisible)return toast('Reveal the correction before reviewing.');
+ c.reviewCount=(c.reviewCount||0)+1;c.lastReviewed=dateKey();const dt=new Date();dt.setDate(dt.getDate()+Math.min(14,2**Math.min(3,c.reviewCount-1)));c.nextReview=dateKey(dt);save();toast('Saved review. Keep practising in your own time.');mistakeCursor++;nextMistake();
+}
+function currentCareer(){let kind=$('careerScene').value;return careerScenes[kind][careerCursor%careerScenes[kind].length]}
+function careerRender(){let [q]=currentCareer();$('careerPrompt').textContent=q;$('careerFeedback').textContent='Listen to a natural example, then answer in your own words.'}
+function careerSpeak(){const [,sample]=currentCareer();say(sample);}
+function careerRepeat(){const [,sample]=currentCareer();speakInto(transcript=>{
+ let match=compareSpeech(sample,transcript);let d=getDay();d.career=(d.career||0)+1;activity('listening');markTaskFor('listening');
+ $('careerFeedback').textContent=`You said: “${transcript}”\nWord recognition overlap with the sample: ${match}%. Your answer can be different from the example and still be correct. This is not pronunciation scoring.`;
+ toast('Nice effort! You practised workplace English.');
+});}
+function addCareerToCoach(){
+ conversations['Career English']=Object.values(careerScenes).flat().map(x=>x[0]);
+ let chip=document.createElement('button');chip.className='chip';chip.textContent='💼 Career English';chip.onclick=()=>{topic='Career English';document.querySelectorAll('#topics .chip').forEach(x=>x.classList.toggle('active',x===chip));resetChat()};
+ $('topics').appendChild(chip);
+}
+function suggestedAction(){
+ const all=Object.values(data.days),totalGrammar=all.reduce((s,d)=>s+(d.grammar||0),0),totalCorrect=all.reduce((s,d)=>s+(d.correct||0),0),talk=all.reduce((s,d)=>s+(d.chats||0),0);
+ const date=dateKey(),due=words.filter(w=>!data.wordProgress[w.word] || data.wordProgress[w.word].nextDue<=date).length;
+ if(!data.assessment)return ['Start with a short level check','A few questions help choose your starting difficulty.','assessment'];
+ if(talk<3)return ['Speak for a few minutes','You have fewer than three saved speaking attempts. Short conversations build confidence.','speaking'];
+ if(totalGrammar>=5&&totalCorrect/totalGrammar<.7)return ['Practise grammar with feedback',`${totalCorrect}/${totalGrammar} grammar answers correct so far. Review one topic at a time.`,'grammar'];
+ if(due>3)return ['Review words before learning more',`${due} vocabulary words are new or ready for review.`,'vocab'];
+ if(data.corrections?.length)return ['Review one correction','Your personal mistake notebook contains corrections worth revisiting.','mistake'];
+ return ['Try a career conversation','You have practised the basics. Try using English in a real-world situation.','career'];
+}
+function renderMetrics(){
+ const all=Object.values(data.days),g=all.reduce((s,d)=>s+(d.grammar||0),0),correct=all.reduce((s,d)=>s+(d.correct||0),0),s=all.reduce((n,d)=>n+(d.chats||0),0),career=all.reduce((n,d)=>n+(d.career||0),0),wordsReviewed=Object.values(data.wordProgress).reduce((n,x)=>n+(x.times||0),0);
+ const values=[['Grammar quiz accuracy',g?Math.round(100*correct/g)+'%':'—',`${correct} correct / ${g} attempts`],['Speaking attempts',String(s),`Voice or typed replies (not hours spoken)`],['Word review successes',String(wordsReviewed),'Self-reported remembered words'],['Career speaking attempts',String(career),'Speech recognizer practice']];
+ $('skillMetrics').replaceChildren();values.forEach(([label,value,detail])=>{let b=document.createElement('div');b.className='skillMetric';let x=document.createElement('small');x.textContent=label;let v=document.createElement('strong');v.textContent=value;let n=document.createElement('small');n.textContent=detail;b.append(x,v,n);$('skillMetrics').appendChild(b)})
+}
+function renderSmart(){
+ const [title,reason,action]=suggestedAction();$('smartAdvice').textContent=title;$('smartWhy').textContent=reason;$('smartAction').dataset.act=action;
+ if(!assessing){if(data.assessment){$('assessStatus').textContent=`LAST: ${data.assessment.correct}/10`;$('assessQuestion').textContent=`Your last suggested starting level: ${data.assessment.suggested}`;$('assessFeedback').textContent='Recheck your level after a few weeks of learning.';}else{$('assessStatus').textContent='NOT TAKEN';$('assessQuestion').textContent='Ready for your first level check?'}}
+ nextMistake();careerRender();renderMetrics();
+}
+function smartAction(){let a=$('smartAction').dataset.act;
+ if(a==='assessment'){beginOrNextAssessment();$('assessQuestion').scrollIntoView({block:'center',behavior:'smooth'})}
+ else if(a==='mistake'){$('mistakePrompt').scrollIntoView({block:'center',behavior:'smooth'})}
+ else if(a==='career'){$('careerPrompt').scrollIntoView({block:'center',behavior:'smooth'})}
+ else if(a==='speaking'){go('coach')}
+ else{go('practice');selectPractice(a)}
+}
+function visitSmart(){go('smart');renderSmart()}
+function initializeUpgrade(){
+ // Existing 35-minute profiles can be changed in Settings. New profiles default to 60.
+ if(!data.assessment)data.assessment=null;
+ applyLearningPlan();renderHome();renderTimer();
+ $('smartHomeBtn').onclick=visitSmart;$('careerHomeBtn').onclick=()=>{visitSmart();$('careerPrompt').scrollIntoView({block:'center',behavior:'smooth'})};
+ $('assessStart').onclick=beginOrNextAssessment;
+ $('assessApply').onclick=()=>{data.profile.level=assessLevel;save();renderSettings();toast('Your suggested level was saved. You can change it later in Settings.')};
+ $('mistakeReveal').onclick=revealMistake;
+ $('mistakeReviewed').onclick=markMistakeReviewed;
+ $('mistakeNext').onclick=()=>{if(!data.corrections.length)return;mistakeCursor++;nextMistake()};
+ $('careerScene').onchange=()=>{careerCursor=0;careerRender()};
+ $('careerListen').onclick=careerSpeak;
+ $('careerVoice').onclick=careerRepeat;
+ $('careerNext').onclick=()=>{careerCursor++;careerRender()};
+ $('careerCoach').onclick=()=>{topic='Career English';go('coach');document.querySelectorAll('#topics .chip').forEach(c=>c.classList.toggle('active',c.textContent.includes('Career English')));resetChat()};
+ $('smartAction').onclick=smartAction;
+ document.querySelectorAll('[data-go="smart"]').forEach(b=>b.addEventListener('click',renderSmart));
+ addCareerToCoach();renderSmart();
+ // Rebuild recommendations when learner changes tabs; other screens remain functional.
+}
+initializeUpgrade();
+
+</script></body></html>
